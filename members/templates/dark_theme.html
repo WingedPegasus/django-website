@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Blog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">A Collaboration Ahnaf And Afnaan</div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="search_bar">
+            <form action="{%url 'search'%}" method="get">
+                <input name="q" type="text" placeholder="Search..." class="search_input">
+                <button type="submit" class="submit1">Search</button>
+              </form>
+        </div>
+
+        <div class="header-content">
+            <h1>Welcome to the Article House</h1>
+            <p>Your source for inspiration and stories.</p>
+            <p>The value of 'my_cookie' is {{ cookie_value }}</p>
+        </div>
+    </header>
+
+    <section class="blog-posts">
+        <div class="post">
+            <h2>Azizur Rahman ;Dutch Bangla Bank</h2>
+            <p>Dutch-Bangla Bank Is Considered as one o...</p>
+            <a href="http://127.0.0.1:8000/search/?q=Aziz">Read More</a>
+            <img>
+        </div>
+        <div class="post">
+            <h2>Post Title 2</h2>
+            <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices...</p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="post">
+            <h2>Post Title 3</h2>
+            <p>Curabitur sodales ligula in libero. Sed dignissim lacinia nunc...</p>
+            <a href="#">Read More</a>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 Dark Blog. All rights reserved.</p>
+        <form action="{%url 'light_theme'%}" method="get">
+            <button class="dark_theme_btn">Light Theme</button>
+        </form>
+    </footer>
+
+</body>
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: white;
+}
+
+
+::selection {
+    background: rgba(114, 211, 252, 0.841);
+    color: #000000;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px;
+    margin-top: -60px;
+    background:linear-gradient(120deg, #601987da, #7a3b3b);
+    border-radius: 10px;
+}
+
+nav .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #3b3939;
+    border-radius: 5px;
+}
+
+.search_bar {
+    margin-top: 20px;
+}
+
+.search_input {
+    height: 40px;
+    width: 400px;
+    margin-top: 2%;
+    text-align: center;
+    border-radius: 100px;
+    font-size: large;
+    font-family: 'Arial';
+}
+
+.submit1 {
+    height: 50px;
+    padding: 10px;
+    border-radius: 30px;
+    color: rgb(0, 0, 0);
+    border: none;
+    outline: none;
+    animation-name: Ahnaf;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: box-shadow 0.3s ease-in-out;
+    position: relative;
+}
+
+
+.submit1:focus {
+    animation: neon 1s infinite alternate;
+}
+
+@keyframes Ahnaf {
+    0% { background-color: rgb(90, 125, 155); }
+    25% { background-color: rgb(55, 105, 163); }
+    50% { background-color: rgb(44, 60, 149); }
+    75% { background-color: rgb(60, 36, 99); }
+    100% { background-color: rgb(57, 30, 105); }
+}
+
+
+/* Header */
+header {
+    text-align: center;
+    padding: 100px 20px;
+    background-repeat:no-repeat;
+}
+header .header-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+header .header-content p {
+    font-size: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    color: #BBBBBB;
+}
+
+/* Blog Posts */
+.blog-posts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+.blog-posts .post {
+    width: 650px;
+    background-color: rgb(40, 44, 52);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+}
+
+.blog-posts .post:hover {
+    transform: translateY(-5px);
+}
+
+.background-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.blog-posts .post h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.blog-posts .post p {
+    font-size: 18px;
+    color: #AAAAAA;
+    margin-bottom: 20px;
+}
+
+.blog-posts .post a {
+    color: #FF6347;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.blog-posts .post a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background:linear-gradient(120deg,rgb(77, 148, 113),rgb(59, 69, 130),rgb(143, 93, 159));
+    color: #fbfbfb;
+}
+</style>
+
+<svg class="background-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 100 100">
+    <defs>
+        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#141e73;stop-opacity:1" />
+            <stop offset="25%" style="stop-color:#a82639;stop-opacity:1" />
+            <stop offset="50%" style="stop-color:#bac261;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#9a69a7;stop-opacity:1" />
+        </linearGradient>
+    </defs>
+    <rect width="100%" height="100%" fill="black"/>
+    <g stroke="url(#grad1)" stroke-width="1">
+        <line x1="0" y1="15" x2="100" y2="100" />
+        <line x1="0" y1="100" x2="100" y2="15" />
+    </g>
+</svg>
+

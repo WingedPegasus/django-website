@@ -1,0 +1,44 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {%if query%}
+        <p>Results for "{{query}}":</p>
+    {%endif%}
+    <ul>
+        {%for item in results%}
+            <p class="search_results_display">{{item.title|safe}}</p>
+            <p class ="search_results_desc">{{item.content|safe}}</p>
+        {%empty%}
+        <p class="img_not_found">No results found...</p>
+        {%endfor%}
+    </ul>
+
+<style>
+    body{
+        background-color:#ffd885;
+    }
+    .img_not_found{
+        font-size: 80px;
+        text-align: center;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    
+    .search_results_display{
+        font-size: xx-large;
+        text-align: center;
+        font-family: Helvetica, sans-serif;
+    }
+    .search_results_desc{
+        font-size:50px ;
+        font-family: 'Times New Roman', Times, serif;
+    }
+</style>
+
+</body>
+</html>
